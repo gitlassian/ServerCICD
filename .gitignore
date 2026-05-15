@@ -11,3 +11,4 @@ messages.json
 .ruff_cache/
 .DS_Store
 ci-cd.yml
+app/test_main.py
