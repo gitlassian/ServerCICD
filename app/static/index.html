@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebula | Message Board</title>
+    <meta name="description" content="A premium real-time messaging board built with FastAPI and Vanilla JS.">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="app-container">
+        <header>
+            <h1 id="main-title">Nebula</h1>
+            <p class="subtitle">Experience seamless communication</p>
+        </header>
+
+        <section class="message-section" id="message-list-container">
+            <div id="message-list" class="message-list">
+                <!-- Messages will appear here -->
+                <div class="loading">Fetching transmissions...</div>
+            </div>
+        </section>
+
+        <section class="input-section">
+            <form id="message-form" class="message-form">
+                <div class="input-group">
+                    <input type="text" id="user-input" placeholder="Your Alias" required maxlength="20">
+                </div>
+                <div class="input-group">
+                    <textarea id="content-input" placeholder="Type your message..." required rows="1"></textarea>
+                </div>
+                <button type="submit" id="send-button">
+                    <span>Send</span>
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                    </svg>
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
