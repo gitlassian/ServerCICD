@@ -19,10 +19,10 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             mkdir -p /home/ubuntu/SimpleWebsite
-            cd /home/ubuntu/SimpleWebsite
-            if [ ! -d ".git" ]; then
-              git clone https://github.com/gitlassian/ServerCICD.git .
-            else
-              git pull origin main
+            cd /home/ubuntu
+            if [ ! -d "SimpleWebsite/.git" ]; then
+              git clone https://github.com/gitlassian/ServerCICD.git SimpleWebsite
             fi
+            cd SimpleWebsite
+            git pull origin main
             docker compose up -d --build
