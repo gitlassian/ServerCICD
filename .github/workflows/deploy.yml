@@ -20,5 +20,9 @@ jobs:
           script: |
             mkdir -p /home/ubuntu/SimpleWebsite
             cd /home/ubuntu/SimpleWebsite
-            docker-compose pull
-            docker-compose up -d
+            if [ ! -d ".git" ]; then
+              git clone https://github.com/gitlassian/ServerCICD.git .
+            else
+              git pull origin main
+            fi
+            docker compose up -d --build
